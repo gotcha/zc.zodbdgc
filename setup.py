@@ -12,15 +12,15 @@
 #
 ##############################################################################
 
-name, version = 'zc.zodbdgc', '0.6.1'
+name, version = 'zope.zodbdgc', '0.6.1'
 
 import os
 from setuptools import setup, find_packages
 
 entry_points = """
 [console_scripts]
-multi-zodb-gc = zc.zodbdgc:gc_command
-multi-zodb-check-refs = zc.zodbdgc:check_command
+multi-zodb-gc = zope.zodbdgc:gc_command
+multi-zodb-check-refs = zope.zodbdgc:check_command
 """
 
 def read(rname):
@@ -46,7 +46,7 @@ setup(
     license = 'ZPL 2.1',
 
     packages = find_packages('src'),
-    namespace_packages = ['zc'],
+    namespace_packages = ['zope'],
     package_dir = {'': 'src'},
     install_requires = ['setuptools', 'ZODB3 >=3.9.0b2'],
     zip_safe = False,
@@ -56,5 +56,5 @@ setup(
     extras_require=dict(
         test=tests_require,
         ),
-    test_suite='zc.zodbdgc.tests.test_suite',
+    test_suite='zope.zodbdgc.tests.test_suite',
     )
